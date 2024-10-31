@@ -1,0 +1,44 @@
+<!-- templates/timetable/home.html -->
+{% extends 'timetable/base.html' %}
+
+{% block content %}
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+    <div class="bg-white p-6 rounded-lg shadow-md">
+        <h2 class="text-xl mb-4">Manage Data</h2>
+        <div class="space-y-4">
+            <a href="{% url 'timetable:add_subject' %}" 
+               class="block bg-blue-500 text-white p-4 rounded text-center">
+                Add Subject
+            </a>
+            <a href="{% url 'timetable:add_faculty' %}" 
+               class="block bg-green-500 text-white p-4 rounded text-center">
+                Add Faculty
+            </a>
+        </div>
+    </div>
+    
+    <div class="bg-white p-6 rounded-lg shadow-md">
+        <h2 class="text-xl mb-4">Timetable Operations</h2>
+        <div class="space-y-4">
+            <a href="{% url 'timetable:generate' %}" 
+               class="block bg-purple-500 text-white p-4 rounded text-center">
+                Generate Timetable
+            </a>
+            <a href="{% url 'timetable:view' %}" 
+               class="block bg-yellow-500 text-white p-4 rounded text-center">
+                View Timetable
+            </a>
+        </div>
+    </div>
+</div>
+
+<div class="mt-8 bg-white p-6 rounded-lg shadow-md">
+    <h2 class="text-xl mb-4">Instructions</h2>
+    <ol class="list-decimal list-inside space-y-2">
+        <li>First, add all subjects for the department</li>
+        <li>Then, add faculty members and assign their subjects</li>
+        <li>Generate the timetable using the genetic algorithm</li>
+        <li>View and print the generated timetable</li>
+    </ol>
+</div>
+{% endblock %}

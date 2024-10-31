@@ -1,0 +1,11 @@
+{% extends 'timetable/base.html' %}
+
+{% block content %}
+    <h2>Add Faculty</h2>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="btn btn-primary">Add Faculty</button>
+    </form>
+    <a href="{% url 'timetable:view' %}">Back to Timetable</a>
+{% endblock %}
